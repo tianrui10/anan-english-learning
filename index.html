@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>全家多语言互动学习中心 (德语宝典 + 英语7天多题强化版)</title>
+    <title>全家多语言互动学习中心 (A1德语大满贯 + 英语7天强化版)</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         body {
@@ -80,7 +80,7 @@
         .sentence-box { margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px dashed #edf2f7; }
         .sentence-box:last-child { border-bottom: none; }
         .translation { color: #718096; font-size: 13px; display: block; margin-top: 2px; font-weight: normal; }
-        .letter-cell { text-align: center; font-size: 26px; font-weight: bold; color: #2b6cb0; background-color: #fafauto; }
+        .letter-cell { text-align: center; font-size: 20px; font-weight: bold; color: #2b6cb0; background-color: #fafafa; vertical-align: middle; }
 
         /* 英语卡片样式 */
         .day-section { margin-top: 35px; padding: 30px; border-radius: 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
@@ -123,7 +123,7 @@
 <div class="container">
     
     <div class="language-switcher">
-        <button class="switch-btn btn-de active-de" onclick="switchLanguage('de')">🇩🇪 爸爸的德语通关宝典</button>
+        <button class="switch-btn btn-de active-de" onclick="switchLanguage('de')">🇩🇪 爸爸的德语A1通关宝典</button>
         <button class="switch-btn btn-en" onclick="switchLanguage('en')">🇬🇧 Anan的英语特训营</button>
     </div>
 
@@ -134,364 +134,182 @@
     </div>
 
     <div id="section-de" class="lang-section active">
-        <h1>🇩🇪 德语发音通关宝典 (全套完整互动版)</h1>
-        <div class="subtitle">10词10句高强度强化训练 · 点击即可大声朗读</div>
+        <h1>🇩🇪 德语发音与A1词汇核心通关宝典</h1>
+        <div class="subtitle">发音基础 + 星期月份 + 阳性名词 + 序数词高强度有声强化</div>
         
         <div class="notice notice-de">
-            <strong>💡 完美跟读特训法：</strong> 鼠标直接点击下方的<strong>蓝色单词或整行德语长句</strong>，即可聆听纯正发音。建议先将语速拉慢到 0.7x 模仿基础口型，熟练后调至 1.0x 感受真实的德语语调节奏！
+            <strong>💡 A1强化特训法：</strong> 鼠标直接点击下方的<strong>蓝色德语词汇或长句</strong>，即可聆听纯正的德国发音。阳性名词自带定冠词 `der` 连读，帮您形成强大的德语天然语感！
         </div>
 
-        <h2>一、单元音与变元音 (Vokale & Umlaute)</h2>
+        <h2>一、德语核心发音通关回顾</h2>
         <table>
             <thead>
                 <tr>
-                    <th width="10%">字母</th>
+                    <th width="12%">字母组合</th>
                     <th width="22%">发音核心规律</th>
-                    <th width="30%">10个高频强化单词 (点击发音)</th>
-                    <th width="38%">10个经典实用句子 (点击发音)</th>
+                    <th width="30%">高频强化单词 (点击发音)</th>
+                    <th width="36%">经典实用句子 (点击发音)</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="letter-cell">a</td>
-                    <td>长音口张大，舌平放。<br>短音短促有力，干净利落。</td>
-                    <td>
-                        <div class="word-grid">
-                            <div class="speakable" onclick="sayDE('Abend')">1. Abend (晚上 - 长)</div>
-                            <div class="speakable" onclick="sayDE('Apfel')">2. Apfel (苹果 - 短)</div>
-                            <div class="speakable" onclick="sayDE('Name')">3. Name (名字)</div>
-                            <div class="speakable" onclick="sayDE('Tag')">4. Tag (白天)</div>
-                            <div class="speakable" onclick="sayDE('alt')">5. alt (老的)</div>
-                            <div class="speakable" onclick="sayDE('antworten')">6. antworten (回答)</div>
-                            <div class="speakable" onclick="sayDE('acht')">7. acht (数字八)</div>
-                            <div class="speakable" onclick="sayDE('arbeiten')">8. arbeiten (工作)</div>
-                            <div class="speakable" onclick="sayDE('Kaffee')">9. Kaffee (咖啡)</div>
-                            <div class="speakable" onclick="sayDE('was')">10. was (什么)</div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Guten Abend!')">Guten Abend!</span><span class="translation">晚上好！</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Der Apfel ist süß.')">Der Apfel ist süß.</span><span class="translation">这个苹果很甜。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Mein Name ist Anna.')">Mein Name ist Anna.</span><span class="translation">我的名字叫 Anna。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ein schöner Tag.')">Ein schöner Tag.</span><span class="translation">美好的一天。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das Haus ist alt.')">Das Haus ist alt.</span><span class="translation">这栋房子很老。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Bitte antworten Sie mir.')">Bitte antworten Sie mir.</span><span class="translation">请回答我。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Es ist acht Uhr.')">Es ist acht Uhr.</span><span class="translation">现在是八点整。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich arbeite heute.')">Ich arbeite heute.</span><span class="translation">我今天工作。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich trinke Kaffee.')">Ich trinke Kaffee.</span><span class="translation">我喝咖啡。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Was ist das?')">Was ist das?</span><span class="translation">这是什么？</span></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="letter-cell">e</td>
-                    <td>长音嘴角用力向两边咧开。<br>短音开口稍大。<br>词尾不重读时发极轻的“呃”。</td>
-                    <td>
-                        <div class="word-grid">
-                            <div class="speakable" onclick="sayDE('Leben')">1. Leben (生活 - 长)</div>
-                            <div class="speakable" onclick="sayDE('Bett')">2. Bett (床 - 短)</div>
-                            <div class="speakable" onclick="sayDE('bitte')">3. bitte (请 - 弱尾音)</div>
-                            <div class="speakable" onclick="sayDE('geben')">4. geben (给)</div>
-                            <div class="speakable" onclick="sayDE('essen')">5. essen (吃)</div>
-                            <div class="speakable" onclick="sayDE('gehen')">6. gehen (走/去)</div>
-                            <div class="speakable" onclick="sayDE('lernen')">7. lernen (学习)</div>
-                            <div class="speakable" onclick="sayDE('mehr')">8. mehr (更多)</div>
-                            <div class="speakable" onclick="sayDE('nett')">9. nett (友善的)</div>
-                            <div class="speakable" onclick="sayDE('sehen')">10. sehen (看)</div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das Leben ist schön.')">Das Leben ist schön.</span><span class="translation">生活是美好的。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das Bett ist bequem.')">Das Bett ist bequem.</span><span class="translation">这张床很舒服。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ein Bier, bitte.')">Ein Bier, bitte.</span><span class="translation">请来一杯啤酒。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Geben Sie mir das Buch.')">Geben Sie mir das Buch.</span><span class="translation">请把那本书给我。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Was möchten Sie essen?')">Was möchten Sie essen?</span><span class="translation">您想吃点什么？</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Wir gehen nach Hause.')">Wir gehen nach Hause.</span><span class="translation">我们回家吧。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich lerne Deutsch.')">Ich lerne Deutsch.</span><span class="translation">我在学德语。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich brauche mehr Zeit.')">Ich brauche mehr Zeit.</span><span class="translation">我需要更多时间。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Sie ist sehr nett.')">Sie ist sehr nett.</span><span class="translation">她人非常友善。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich sehe einen Film.')">Ich sehe einen Film.</span><span class="translation">我在看一部电影。</span></div>
-                    </td>
-                </tr>
-                <tr>
                     <td class="letter-cell">ö</td>
-                    <td><strong>圆唇发 e</strong><br>双唇摆出拼音 "o" 的圆唇，固定不动，口腔内发 “哎(e)” 的音。</td>
+                    <td>圆唇发 e。双唇摆出拼音 "o" 嘴型，固定不动，口腔内发 “哎(e)” 的音。</td>
                     <td>
                         <div class="word-grid">
                             <div class="speakable" onclick="sayDE('schön')">1. schön (美丽的)</div>
                             <div class="speakable" onclick="sayDE('öffnen')">2. öffnen (打开)</div>
-                            <div class="speakable" onclick="sayDE('hören')">3. hören (听)</div>
-                            <div class="speakable" onclick="sayDE('können')">4. können (能够)</div>
-                            <div class="speakable" onclick="sayDE('möchte')">5. möchte (想要)</div>
-                            <div class="speakable" onclick="sayDE('Brötchen')">6. Brötchen (小面包)</div>
-                            <div class="speakable" onclick="sayDE('Köln')">7. Köln (科隆)</div>
-                            <div class="speakable" onclick="sayDE('Löffel')">8. Löffel (勺子)</div>
-                            <div class="speakable" onclick="sayDE('Öl')">9. Öl (油)</div>
-                            <div class="speakable" onclick="sayDE('zwölf')">10. zwölf (十二)</div>
+                            <div class="speakable" onclick="sayDE('möchte')">3. möchte (想要)</div>
                         </div>
                     </td>
                     <td>
                         <div class="sentence-box"><span class="speakable" onclick="sayDE('Das ist sehr schön.')">Das ist sehr schön.</span><span class="translation">这太漂亮了。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Bitte öffnen Sie die Tür.')">Bitte öffnen Sie die Tür.</span><span class="translation">请开门。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich höre Musik.')">Ich höre Musik.</span><span class="translation">我在听音乐。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Wir können Deutsch sprechen.')">Wir können Deutsch sprechen.</span><span class="translation">我们会说德语。</span></div>
                         <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich möchte einen Tee.')">Ich möchte einen Tee.</span><span class="translation">我想来杯茶。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das Brötchen schmeckt gut.')">Das Brötchen schmeckt gut.</span><span class="translation">这个小面包很好吃。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Köln ist eine große Stadt.')">Köln ist eine große Stadt.</span><span class="translation">科隆是一座大城市。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Der Löffel liegt hier.')">Der Löffel liegt hier.</span><span class="translation">勺子躺在这儿。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das Öl ist in der Küche.')">Das Öl ist in der Küche.</span><span class="translation">油在厨房里。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Es ist zwölf Uhr.')">Es ist zwölf Uhr.</span><span class="translation">现在是12点。</span></div>
                     </td>
                 </tr>
                 <tr>
                     <td class="letter-cell">ü</td>
-                    <td><strong>憋嘴发 i</strong><br>双唇噘起成小圆（拼音 u 的口型），固定住，舌尖顶住下齿发“衣(i)”。</td>
+                    <td>憋嘴发 i。双唇噘起成拼音 u 的口型，固定住，舌尖顶住下齿发“衣(i)”。</td>
                     <td>
                         <div class="word-grid">
                             <div class="speakable" onclick="sayDE('Tür')">1. Tür (门)</div>
                             <div class="speakable" onclick="sayDE('Küche')">2. Küche (厨房)</div>
-                            <div class="speakable" onclick="sayDE('Glück')">3. Glück (运气)</div>
-                            <div class="speakable" onclick="sayDE('müde')">4. müde (疲劳的)</div>
-                            <div class="speakable" onclick="sayDE('Übung')">5. Übung (练习)</div>
-                            <div class="speakable" onclick="sayDE('Gemüse')">6. Gemüse (蔬菜)</div>
-                            <div class="speakable" onclick="sayDE('süß')">7. süß (甜的)</div>
-                            <div class="speakable" onclick="sayDE('Frühstück')">8. Frühstück (早餐)</div>
-                            <div class="speakable" onclick="sayDE('Züge')">9. Züge (火车-复数)</div>
-                            <div class="speakable" onclick="sayDE('fünf')">10. fünf (五)</div>
+                            <div class="speakable" onclick="sayDE('müde')">3. müde (疲劳的)</div>
                         </div>
                     </td>
                     <td>
                         <div class="sentence-box"><span class="speakable" onclick="sayDE('Die Tür ist zu.')">Die Tür ist zu.</span><span class="translation">门关着。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Sie arbeitet in der Küche.')">Sie arbeitet in der Küche.</span><span class="translation">她在厨房工作。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Viel Glück im neuen Jahr!')">Viel Glück im neuen Jahr!</span><span class="translation">新的一年祝你好运！</span></div>
                         <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich bin heute so müde.')">Ich bin heute so müde.</span><span class="translation">我今天太累了。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Die Übung macht den Meister.')">Die Übung macht den Meister.</span><span class="translation">熟能生巧（大师皆由练习造就）。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Gemüse ist sehr gesund.')">Gemüse ist sehr gesund.</span><span class="translation">蔬菜对健康很有益。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Der Kuchen is sehr süß.')">Der Kuchen is sehr süß.</span><span class="translation">这个蛋糕非常甜。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das Frühstück ist fertig.')">Das Frühstück ist fertig.</span><span class="translation">早餐准备好了。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Die Züge kommen pünktlich.')">Die Züge kommen pünktlich.</span><span class="translation">火车准时到达。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Es kostet fünf Euro.')">Es kostet fünf Euro.</span><span class="translation">这个花费5欧元。</span></div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>二、复合元音 (Diphthonge)</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th width="10%">组合</th>
-                    <th width="22%">发音核心规律</th>
-                    <th width="30%">10个高频强化单词 (点击发音)</th>
-                    <th width="38%">10个经典实用句子 (点击发音)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="letter-cell">ei</td>
-                    <td>发类似英文单词 “I” 的音（从“啊”滑向“依”）。</td>
-                    <td>
-                        <div class="word-grid">
-                            <div class="speakable" onclick="sayDE('nein')">1. nein (不)</div>
-                            <div class="speakable" onclick="sayDE('mein')">2. mein (我的)</div>
-                            <div class="speakable" onclick="sayDE('Zeit')">3. Zeit (时间)</div>
-                            <div class="speakable" onclick="sayDE('zwei')">4. zwei (二)</div>
-                            <div class="speakable" onclick="sayDE('Fleisch')">5. Fleisch (肉)</div>
-                            <div class="speakable" onclick="sayDE('Ei')">6. Ei (鸡蛋)</div>
-                            <div class="speakable" onclick="sayDE('heiß')">7. heiß (热的)</div>
-                            <div class="speakable" onclick="sayDE('schreiben')">8. schreiben (写)</div>
-                            <div class="speakable" onclick="sayDE('Wein')">9. Wein (葡萄酒)</div>
-                            <div class="speakable" onclick="sayDE('frei')">10. frei (自由/空闲)</div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Nein, danke.')">Nein, danke.</span><span class="translation">不，谢谢。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das ist mein Buch.')">Das ist mein Buch.</span><span class="translation">这是我的书。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich habe keine Zeit.')">Ich habe keine Zeit.</span><span class="translation">我没有时间。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich habe zwei Kinder.')">Ich habe zwei Kinder.</span><span class="translation">我有两个孩子。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich esse kein Fleisch.')">Ich esse kein Fleisch.</span><span class="translation">我不吃肉。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Möchten Sie ein Ei?')">Möchten Sie ein Ei?</span><span class="translation">你想来个鸡蛋吗？</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Der Tee ist sehr heiß.')">Der Tee ist sehr heiß.</span><span class="translation">这个茶非常烫。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich schreibe eine E-Mail.')">Ich schreibe eine E-Mail.</span><span class="translation">我在写一封邮件。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ein Glas Wein, bitte.')">Ein Glas Wein, bitte.</span><span class="translation">请来一杯葡萄酒。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Am Sonntag habe ich frei.')">Am Sonntag habe ich frei.</span><span class="translation">我周日休息。</span></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="letter-cell">eu / äu</td>
-                    <td>发“奥-伊”的连读音（双唇扁圆由大变小）。</td>
-                    <td>
-                        <div class="word-grid">
-                            <div class="speakable" onclick="sayDE('neu')">1. neu (新的)</div>
-                            <div class="speakable" onclick="sayDE('heute')">2. heute (今天)</div>
-                            <div class="speakable" onclick="sayDE('Euro')">3. Euro (欧元)</div>
-                            <div class="speakable" onclick="sayDE('Freund')">4. Freund (朋友)</div>
-                            <div class="speakable" onclick="sayDE('Deutsch')">5. Deutsch (德语)</div>
-                            <div class="speakable" onclick="sayDE('Häuser')">6. Häuser (房子-复数)</div>
-                            <div class="speakable" onclick="sayDE('Bäume')">7. Bäume (树木-复数)</div>
-                            <div class="speakable" onclick="sayDE('teuer')">8. teuer (贵的)</div>
-                            <div class="speakable" onclick="sayDE('Leute')">9. Leute (人们)</div>
-                            <div class="speakable" onclick="sayDE('Feuer')">10. Feuer (火)</div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das Auto ist ganz neu.')">Das Auto ist ganz neu.</span><span class="translation">这辆车是崭新的。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Heute ist das Wetter gut.')">Heute ist das Wetter gut.</span><span class="translation">今天天气很好。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das kostet zehn Euro.')">Das kostet zehn Euro.</span><span class="translation">这个花费10欧元。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Er ist ein guter Freund.')">Er ist ein guter Freund.</span><span class="translation">他是一个好朋友。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Wir lernen alle Deutsch.')">Wir lernen alle Deutsch.</span><span class="translation">我们都在学德语。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Die Häuser hier sind alt.')">Die Häuser hier sind alt.</span><span class="translation">这里的房子很旧了。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Die Bäume sind grün.')">Die Bäume sind grün.</span><span class="translation">树木全变绿了。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das Restaurant ist teuer.')">Das Restaurant ist teuer.</span><span class="translation">这家餐厅很贵。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Viele Leute sind im Park.')">Viele Leute sind im Park.</span><span class="translation">公园里有很多人。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Haben Sie Feuer?')">Haben Sie Feuer?</span><span class="translation">（借火）您有打火机吗？</span></div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>三、核心辅音组合 (Konsonantenverbindungen)</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th width="10%">组合</th>
-                    <th width="22%">发音核心规律</th>
-                    <th width="30%">10个高频强化单词 (点击发音)</th>
-                    <th width="38%">10个经典实用句子 (点击发音)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="letter-cell">sch</td>
-                    <td>发类似拼音 "sh"（师）的急促嘘气送气音。</td>
-                    <td>
-                        <div class="word-grid">
-                            <div class="speakable" onclick="sayDE('Schule')">1. Schule (学校)</div>
-                            <div class="speakable" onclick="sayDE('schnell')">2. schnell (快的)</div>
-                            <div class="speakable" onclick="sayDE('schreiben')">3. schreiben (写)</div>
-                            <div class="speakable" onclick="sayDE('Fleisch')">4. Fleisch (肉)</div>
-                            <div class="speakable" onclick="sayDE('Schiff')">5. Schiff (船)</div>
-                            <div class="speakable" onclick="sayDE('Schrank')">6. Schrank (柜子)</div>
-                            <div class="speakable" onclick="sayDE('schlafen')">7. schlafen (睡觉)</div>
-                            <div class="speakable" onclick="sayDE('schwarz')">8. schwarz (黑色的)</div>
-                            <div class="speakable" onclick="sayDE('Schlüssel')">9. Schlüssel (钥匙)</div>
-                            <div class="speakable" onclick="sayDE('Tisch')">10. Tisch (桌子)</div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Die Schule ist groß.')">Die Schule ist groß.</span><span class="translation">这所学校很大。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Fahr bitte nicht so schnell.')">Fahr bitte nicht so schnell.</span><span class="translation">请别开得那么快。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Er schreibt ein neues Buch.')">Er schreibt ein neues Buch.</span><span class="translation">他正在写一本新书。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich kaufe frisches Fleisch.')">Ich kaufe frisches Fleisch.</span><span class="translation">我买新鲜的肉。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das Schiff fährt nach Hamburg.')">Das Schiff fährt nach Hamburg.</span><span class="translation">这艘船驶往汉堡。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Der Schrank steht im Zimmer.')">Der Schrank steht im Zimmer.</span><span class="translation">柜子在房间里放着。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das Baby schläft ruhig.')">Das Baby schläft ruhig.</span><span class="translation">婴儿正在安静地睡觉。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich trinke schwarzen Tee.')">Ich trinke schwarzen Tee.</span><span class="translation">我喝红茶（黑茶）。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Wo ist mein Schlüssel?')">Wo ist mein Schlüssel?</span><span class="translation">我的钥匙在哪儿？</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das Essen steht auf dem Tisch.')">Das Essen steht auf dem Tisch.</span><span class="translation">饭菜已经在桌上了。</span></div>
                     </td>
                 </tr>
                 <tr>
                     <td class="letter-cell">st / sp</td>
-                    <td><strong>在词首或前缀后时</strong>：发成 **scht** 和 **schp**（“施特”和“施普”）。</td>
+                    <td>位于词首或前缀后时，发成 scht 和 schp（“施特”和“施普”）。</td>
                     <td>
                         <div class="word-grid">
                             <div class="speakable" onclick="sayDE('Straße')">1. Straße (街道)</div>
                             <div class="speakable" onclick="sayDE('Sport')">2. Sport (运动)</div>
-                            <div class="speakable" onclick="sayDE('Stadt')">3. Stadt (城市)</div>
-                            <div class="speakable" onclick="sayDE('sprechen')">4. sprechen (说话)</div>
-                            <div class="speakable" onclick="sayDE('stehen')">5. stehen (站立/停)</div>
-                            <div class="speakable" onclick="sayDE('spielen')">6. spielen (玩/踢)</div>
-                            <div class="speakable" onclick="sayDE('Stift')">7. Stift (钢笔/笔)</div>
-                            <div class="speakable" onclick="sayDE('spät')">8. spät (晚的)</div>
-                            <div class="speakable" onclick="sayDE('Stunde')">9. Stunde (小时)</div>
-                            <div class="speakable" onclick="sayDE('Sprache')">10. Sprache (语言)</div>
+                            <div class="speakable" onclick="sayDE('sprechen')">3. sprechen (说话)</div>
                         </div>
                     </td>
                     <td>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Die Straße ist sehr lang.')">Die Straße ist sehr lang.</span><span class="translation">这条街非常长。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Sport hält uns fit.')">Sport hält uns fit.</span><span class="translation">运动让我们保持健康。</span></div>
                         <div class="sentence-box"><span class="speakable" onclick="sayDE('Hannover ist eine grüne Stadt.')">Hannover ist eine grüne Stadt.</span><span class="translation">汉诺威是一座绿化很好的城市。</span></div>
                         <div class="sentence-box"><span class="speakable" onclick="sayDE('Sprechen Sie Englisch?')">Sprechen Sie Englisch?</span><span class="translation">您说英语吗？</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Der Bus steht an der Haltestelle.')">Der Bus steht an der Haltestelle.</span><span class="translation">公交车停在车站。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Die Kinder spielen im Garten.')">Die Kinder spielen im Garten.</span><span class="translation">孩子们在花园里玩。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Kann ich einen Stift haben?')">Kann ich einen Stift haben?</span><span class="translation">我可以借用一支笔吗？</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Es ist schon sehr spät.')">Es ist schon sehr spät.</span><span class="translation">时间已经很晚了。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich warte seit einer Stunde.')">Ich warte seit einer Stunde.</span><span class="translation">我已经等了一个小时了。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Deutsch ist eine schöne Sprache.')">Deutsch ist eine schöne Sprache.</span><span class="translation">德语是一门美丽的语言。</span></div>
                     </td>
                 </tr>
             </tbody>
         </table>
 
-        <h2>四、词尾变音与特殊字母 (Besonderheiten)</h2>
+        <h2>二、时间维度：星期与月份 (Wochentage & Monate)</h2>
         <table>
             <thead>
                 <tr>
-                    <th width="10%">组合</th>
-                    <th width="22%">发音核心规律</th>
-                    <th width="30%">10个高频强化单词 (点击发音)</th>
-                    <th width="38%">10个经典实用句子 (点击发音)</th>
+                    <th width="12%">分类标签</th>
+                    <th width="22%">A1核心语法贴士</th>
+                    <th width="30%">高频词汇专项 (点击发音)</th>
+                    <th width="36%">场景实用日常句 (点击发音)</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="letter-cell">b / d / g</td>
-                    <td><strong>位于词尾或音节末时清化</strong>：<br>b $\rightarrow$ p | d $\rightarrow$ t | g $\rightarrow$ k</td>
+                    <td class="letter-cell">星期<br>Woche</td>
+                    <td>德语中所有的星期日子全部都是<strong>阳性名词</strong>，时间介词用 **am**。</td>
                     <td>
                         <div class="word-grid">
-                            <div class="speakable" onclick="sayDE('Tag')">1. Tag (白天 - 读k)</div>
-                            <div class="speakable" onclick="sayDE('Kind')">2. Kind (孩子 - 读t)</div>
-                            <div class="speakable" onclick="sayDE('gelb')">3. gelb (黄色 - 读p)</div>
-                            <div class="speakable" onclick="sayDE('Weg')">4. Weg (路 - 读k)</div>
-                            <div class="speakable" onclick="sayDE('Abend')">5. Abend (晚上 - 读t)</div>
-                            <div class="speakable" onclick="sayDE('Urlaub')">6. Urlaub (度假 - 读p)</div>
-                            <div class="speakable" onclick="sayDE('Hemd')">7. Hemd (衬衫 - 读t)</div>
-                            <div class="speakable" onclick="sayDE('klug')">8. klug (聪明的 - 读k)</div>
-                            <div class="speakable" onclick="sayDE('Geld')">9. Geld (钱 - 读t)</div>
-                            <div class="speakable" onclick="sayDE('Halb')">10. halb (一半 - 读p)</div>
+                            <div class="speakable" onclick="sayDE('Montag')">1. der Montag (周一)</div>
+                            <div class="speakable" onclick="sayDE('Mittwoch')">2. der Mittwoch (周三)</div>
+                            <div class="speakable" onclick="sayDE('Freitag')">3. der Freitag (周五)</div>
+                            <div class="speakable" onclick="sayDE('Samstag')">4. der Samstag (周六)</div>
+                            <div class="speakable" onclick="sayDE('Sonntag')">5. der Sonntag (周日)</div>
                         </div>
                     </td>
                     <td>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Guten Tag!')">Guten Tag!</span><span class="translation">你好！</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das Kind schläft.')">Das Kind schläft.</span><span class="translation">这个孩子在睡觉。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Die Blume ist gelb.')">Die Blume ist gelb.</span><span class="translation">这朵花是黄色的。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Der Weg ist nicht weit.')">Der Weg ist nicht weit.</span><span class="translation">这条路并不远。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Guten Abend, meine Damen und Herren.')">Guten Abend, meine Damen und Herren.</span><span class="translation">晚上好，女士们先生们。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich habe bald Urlaub.')">Ich habe bald Urlaub.</span><span class="translation">我很快就要休假度假了。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das weiße Hemd ist neu.')">Das weiße Hemd ist neu.</span><span class="translation">这件白衬衫是新买的。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Der Hund ist sehr klug.')">Der Hund ist sehr klug.</span><span class="translation">这只狗非常聪明。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich habe kein Geld dabei.')">Ich habe kein Geld dabei.</span><span class="translation">我身上没带钱。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Es ist halb zwei.')">Es ist halb zwei.</span><span class="translation">现在是一点半。</span></div>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Heute ist Montag.')">Heute ist Montag.</span><span class="translation">今天是星期一。</span></div>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Am Freitag habe ich frei.')">Am Freitag habe ich frei.</span><span class="translation">我星期五休息。</span></div>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Was machst du am Wochenende?')">Was machst du am Wochenende?</span><span class="translation">你周末打算干什么？</span></div>
                     </td>
                 </tr>
                 <tr>
-                    <td class="letter-cell">r</td>
-                    <td>在元音前发微弱的大舌音或小舌音。<br><strong>在词尾或辅音前弱化为“啊”</strong>。</td>
+                    <td class="letter-cell">月份<br>Monate</td>
+                    <td>德语中12个月份的名字也全部是重读的<strong>阳性名词</strong>，时间介词用 **im**。</td>
                     <td>
                         <div class="word-grid">
-                            <div class="speakable" onclick="sayDE('rot')">1. rot (红色 - 词首)</div>
-                            <div class="speakable" onclick="sayDE('Bier')">2. Bier (啤酒 - 读“啊”)</div>
-                            <div class="speakable" onclick="sayDE('Mutter')">3. Mutter (母亲)</div>
-                            <div class="speakable" onclick="sayDE('Vater')">4. Vater (父亲)</div>
-                            <div class="speakable" onclick="sayDE('hier')">5. hier (这里)</div>
-                            <div class="speakable" onclick="sayDE('wir')">6. wir (我们)</div>
-                            <div class="speakable" onclick="sayDE('Wasser')">7. Wasser (水)</div>
-                            <div class="speakable" onclick="sayDE('Lernen')">8. lernen (学习 - 辅音前)</div>
-                            <div class="speakable" onclick="sayDE('Tür')">9. Tür (门)</div>
-                            <div class="speakable" onclick="sayDE('vier')">10. vier (数字四)</div>
+                            <div class="speakable" onclick="sayDE('Januar')">1. der Januar (一月)</div>
+                            <div class="speakable" onclick="sayDE('Mai')">2. der Mai (五月)</div>
+                            <div class="speakable" onclick="sayDE('Juli')">3. der Juli (七月)</div>
+                            <div class="speakable" onclick="sayDE('Oktober')">4. der Oktober (十月)</div>
+                            <div class="speakable" onclick="sayDE('Dezember')">5. der Dezember (十二月)</div>
                         </div>
                     </td>
                     <td>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Die Rose ist rot.')">Die Rose ist rot.</span><span class="translation">玫瑰花是红色的。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Noch ein Bier, bitte.')">Noch ein Bier, bitte.</span><span class="translation">请再来一杯啤酒。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Meine Mutter kocht gern.')">Meine Mutter kocht gern.</span><span class="translation">我母亲喜欢做饭。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Mein Vater liest die Zeitung.')">Mein Vater liest die Zeitung.</span><span class="translation">我父亲正在读报纸。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Kommen Sie bitte hierher.')">Kommen Sie bitte hierher.</span><span class="translation">请到这边来。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Wir verstehen alles.')">Wir verstehen alles.</span><span class="translation">我们全听懂了。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das Wasser schmeckt frisch.')">Das Wasser schmeckt frisch.</span><span class="translation">这水尝起来很清甜。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Wir lernen jeden Tag.')">Wir lernen jeden Tag.</span><span class="translation">我们每天都学习。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Bitte schließen Sie die Tür.')">Bitte schließen Sie die Tür.</span><span class="translation">请关上门。</span></div>
-                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Wir sind zu viert.')">Wir sind zu viert.</span><span class="translation">我们一共有四个人。</span></div>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Im Mai ist das Wetter schön.')">Im Mai ist das Wetter schön.</span><span class="translation">五月份天气很暖和漂亮。</span></div>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Mein Geburtstag ist im Juli.')">Mein Geburtstag ist im Juli.</span><span class="translation">我的生日在七月份。</span></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>三、德语核心：阳性名词特训 (Maskuline Nomen - der)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th width="12%">专项主题</th>
+                    <th width="22%">核心语言逻辑</th>
+                    <th width="30%">带定冠词 der 高频词 (点击发音)</th>
+                    <th width="36%">带冠词的名词长句 (点击发音)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="letter-cell">阳性名词<br>der</td>
+                    <td>阳性名词是德语背单词的难关。点击时连带定冠词 `der` 一起背，形成下意识的固定搭配和听力直觉。</td>
+                    <td>
+                        <div class="word-grid">
+                            <div class="speakable" onclick="sayDE('der Mann')">1. der Mann (男人 / 丈夫)</div>
+                            <div class="speakable" onclick="sayDE('der Vater')">2. der Vater (父亲)</div>
+                            <div class="speakable" onclick="sayDE('der Bahnhof')">3. der Bahnhof (火车站)</div>
+                            <div class="speakable" onclick="sayDE('der Tisch')">4. der Tisch (桌子)</div>
+                            <div class="speakable" onclick="sayDE('der Kaufvertrag')">5. der Kaufvertrag (购买合同)</div>
+                            <div class="speakable" onclick="sayDE('der Kaffee')">6. der Kaffee (咖啡)</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Der Mann arbeitet hier.')">Der Mann arbeitet hier.</span><span class="translation">那个男人在这里工作。</span></div>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Wo ist der Bahnhof?')">Wo ist der Bahnhof?</span><span class="translation">火车站站在哪里？</span></div>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Der Kaufvertrag ist fertig.')">Der Kaufvertrag ist fertig.</span><span class="translation">购买合同已经准备好了。</span></div>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Der Kaffee schmeckt gut.')">Der Kaffee schmeckt gut.</span><span class="translation">这咖啡味道真不错。</span></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>四、基础数学与序数词 (Zahlen & Ordnungszahlen)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th width="12%">分类</th>
+                    <th width="22%">数词变化核心规律</th>
+                    <th width="30%">高频数词强化 (点击发音)</th>
+                    <th width="36%">涉及序数词的常用句 (点击发音)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="letter-cell">序数词<br>序列</td>
+                    <td>1-19的序数词在基数词后加 **-te**（有例外如 erst, dritt）。前面通常有定冠词配合。</td>
+                    <td>
+                        <div class="word-grid">
+                            <div class="speakable" onclick="sayDE('erste')">1. erste (第一)</div>
+                            <div class="speakable" onclick="sayDE('zweite')">2. zweite (第二)</div>
+                            <div class="speakable" onclick="sayDE('dritte')">3. dritte (第三)</div>
+                            <div class="speakable" onclick="sayDE('vierte')">4. vierte (第四)</div>
+                            <div class="speakable" onclick="sayDE('fünfte')">5. fünfte (第五)</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Heute ist der erste Mai.')">Heute ist der erste Mai.</span><span class="translation">今天是五月一日。</span></div>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das ist mein zweites Auto.')">Das ist mein zweites Auto.</span><span class="translation">这是我的第二辆车。</span></div>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Er wohnt im dritten Stock.')">Er wohnt im dritten Stock.</span><span class="translation">他住在三楼（第三层）。</span></div>
                     </td>
                 </tr>
             </tbody>
@@ -544,284 +362,15 @@
             <div class="question-block" id="d1q4">
                 <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 4: What is True about Leo when he sees the ducks?</div>
                 <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd4q4')">A. He jumps into the water to chase them.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd4q4')">B. He barks very loudly at them.</div>
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd4q4')">C. He stays quiet and sits down by Max.</div>
+                    <div class="option-item" onclick="checkAnswer(this, false, 'd1q4')">A. He jumps into the water to chase them.</div>
+                    <div class="option-item" onclick="checkAnswer(this, false, 'd1q4')">B. He barks very loudly at them.</div>
+                    <div class="option-item" onclick="checkAnswer(this, true, 'd1q4')">C. He stays quiet and sits down by Max.</div>
                 </div>
                 <div class="explanation"><strong>解析：</strong>最后提到“but he does not bark. He just sits by the lake”，说明他安静地坐下了。</div>
             </div>
         </div>
 
-        <div class="day-section day2-theme">
-            <div class="day-header"><div class="day-title">🌟 Day 2: The Secret of the Forest</div><div class="badge-animation">🌳</div></div>
-            <div class="story-box" onclick="speakEN(this.innerText)">Mia loves spending time outdoors. On a sunny afternoon, she walks into a deep forest behind her grandmother's house. The forest is quiet, and the air smells like fresh rain. Suddenly, Mia spots something shiny hidden under a large, old oak tree. She runs closer and discovers a small, wooden box wrapped in a green ribbon. With exciting hands, she opens it slowly. Inside the box, there is a beautiful stone that glows with a soft blue light and a short note that says: "To the person who loves nature." Mia smiles warmly and decides to keep this wonderful secret in her heart.</div>
-            
-            <div class="question-block" id="d2q1">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 1: Where is the deep forest located?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd2q1')">A. Next to Mia's school.</div>
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd2q1')">B. Behind her grandmother's house.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd2q1')">C. Inside a big city park.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>开头明确写到“she walks into a deep forest behind her grandmother's house”。</div>
-            </div>
-
-            <div class="question-block" id="d2q2">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 2: What does Mia discover under the large oak tree?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd2q2')">A. A small wooden box with a ribbon.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd2q2')">B. A golden key to a house.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd2q2')">C. A little bird that cannot fly.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>文中提到“discovers a small, wooden box wrapped in a green ribbon”。</div>
-            </div>
-
-            <div class="question-block" id="d2q3">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 3: What is special about the stone inside the box?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd2q3')">A. It is very heavy and dark.</div>
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd2q3')">B. It glows with a soft blue light.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd2q3')">C. It is made of sweet chocolate.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>文中描述s石头是“a beautiful stone that glows with a soft blue light”。</div>
-            </div>
-
-            <div class="question-block" id="d2q4">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 4: What does the note in the box say?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd2q4')">A. "Find the gold here."</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd2q4')">B. "To my dear grandmother."</div>
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd2q4')">C. "To the person who loves nature."</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>纸条上的原文是："To the person who loves nature."。</div>
-            </div>
         </div>
-
-        <div class="day-section day3-theme">
-            <div class="day-header"><div class="day-title">🌟 Day 3: Ben's Special Star Project</div><div class="badge-animation">🚀</div></div>
-            <div class="story-box" onclick="speakEN(this.innerText)">Ben is eleven years old and loves science very much. This week, his school has a special project about space. Ben decides to make a model of the solar system. He uses colorful paper, small plastic balls, and a lot of silver glue to make the stars shine. His younger sister, Lily, wants to help him, so Ben asks her to paint the planet Mars bright red. They work together at the kitchen table for three evenings. On Friday morning, Ben carries his beautiful project safely to school. His teacher is proud and gives him a big shiny gold star.</div>
-            
-            <div class="question-block" id="d3q1">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 1: What subject does Ben love very much?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd3q1')">A. History and Art.</div>
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd3q1')">B. Science.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd3q1')">C. Music.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>开头提到“loves science very much”，说明他最喜欢科学。</div>
-            </div>
-
-            <div class="question-block" id="d3q2">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 2: What does Ben ask his sister Lily to do?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd3q2')">A. Paint the planet Mars bright red.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd3q2')">B. Cut the colorful paper.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd3q2')">C. Buy some new plastic balls.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>文中写道“Ben asks her to paint the planet Mars bright red”。</div>
-            </div>
-
-            <div class="question-block" id="d3q3">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 3: How long do they work on the star project?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd3q3')">A. For only one morning.</div>
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd3q3')">B. For three evenings.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd3q3')">C. For a whole month.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>文中提到“They work together at the kitchen table for three evenings”。</div>
-            </div>
-
-            <div class="question-block" id="d3q4">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 4: What reward does Ben get on Friday morning?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd3q4')">A. A big toy robot.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd3q4')">B. Some chocolate from his sister.</div>
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd3q4')">C. A big shiny gold star from his teacher.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>最后句说老师很自豪，给了他一颗闪亮的大金星奖励。</div>
-            </div>
-        </div>
-
-        <div class="day-section day4-theme">
-            <div class="day-header"><div class="day-title">🌟 Day 4: The Lost Kitten in the Garden</div><div class="badge-animation">🐱</div></div>
-            <div class="story-box" onclick="speakEN(this.innerText)">Emma was reading a comic book in the garden when she heard a tiny sound. "Meow, meow." She looked behind the big rose bush and found a very small white kitten. It looked scared and its fur was dirty. Emma gently picked it up and brought it some warm milk from the kitchen. The kitten drank the milk fast and started to purr happily. Emma named the kitten "Snowy" because its fur was as white as snow, and her parents allowed her to keep it.</div>
-            
-            <div class="question-block" id="d4q1">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 1: What was Emma doing when she heard the sound?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd4q1')">A. She was sleeping in her bed.</div>
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd4q1')">B. She was reading a comic book.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd4q1')">C. She was playing football.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>开头第一句话提到“Emma was reading a comic book in the garden”。</div>
-            </div>
-
-            <div class="question-block" id="d4q2">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 2: Where did Emma find the small kitten?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd4q2')">A. Under the kitchen table.</div>
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd4q2')">B. Behind the big rose bush.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd4q2')">C. High up in a tree.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>文中写道“She looked behind the big rose bush and found...”。</div>
-            </div>
-
-            <div class="question-block" id="d4q3">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 3: What did Emma give to the kitten first?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd4q3')">A. Some warm milk.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd4q3')">B. A small fish toy.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd4q3')">C. A cold apple.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>文中写道她从厨房拿来了温暖的牛奶给小猫。</div>
-            </div>
-
-            <div class="question-block" id="d4q4">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 4: Why is the kitten named "Snowy"?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd4q4')">A. Because its fur was as white as snow.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd4q4')">B. Because Emma found it in the winter snow.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd4q4')">C. Because it likes to play outside in cold weather.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>文中明确写道“named the kitten 'Snowy' because its fur was as white as snow”。</div>
-            </div>
-        </div>
-
-        <div class="day-section day5-theme">
-            <div class="day-header"><div class="day-title">🌟 Day 5: Grandfather's Magic Pocket Watch</div><div class="badge-animation">⌚</div></div>
-            <div class="story-box" onclick="speakEN(this.innerText)">Tom's grandfather has a beautiful golden pocket watch. It does not use batteries, but needs to be turned with a small key every night. Grandfather tells Tom that this watch is eighty years old and has traveled across many countries. When you put the watch close to your ear, it makes a steady "tick-tock" sound. To Tom, it sounds like a tiny heart beating. Grandfather promises to give this special watch to Tom on his twelfth birthday next year.</div>
-            
-            <div class="question-block" id="d5q1">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 1: How does the pocket watch get its power to run?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd5q1')">A. It uses a modern computer battery.</div>
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd5q1')">B. It needs to be turned with a small key every night.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd5q1')">C. It gets power from the warm sun.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>文中写道“It does not use batteries, but needs to be turned with a small key every night”。</div>
-            </div>
-
-            <div class="question-block" id="d5q2">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 2: How old is the golden pocket watch?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd5q2')">A. Twelve years old.</div>
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd5q2')">B. Eighty years old.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd5q2')">C. One hundred years old.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>爷爷告诉 Tom 这块表已经80岁了。</div>
-            </div>
-
-            <div class="question-block" id="d5q3">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 3: What does the steady "tick-tock" sound remind Tom of?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd5q3')">A. A tiny heart beating.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd5q3')">B. A loud bird singing.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd5q3')">C. A big heavy rain.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>对 Tom 而言，滴答声听起来像一颗微小的心脏在跳动。</div>
-            </div>
-
-            <div class="question-block" id="d5q4">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 4: When will Tom receive this pocket watch as a gift?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd5q4')">A. On Christmas Day this year.</div>
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd5q4')">B. On his twelfth birthday next year.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd5q4')">C. When he goes to a big university.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>最后一句明确写到“promises to give this special watch to Tom on his twelfth birthday next year”。</div>
-            </div>
-        </div>
-
-        <div class="day-section day6-theme">
-            <div class="day-header"><div class="day-title">🌟 Day 6: The Great Pancake Saturday</div><div class="badge-animation">🥞</div></div>
-            <div class="story-box" onclick="speakEN(this.innerText)">Saturday morning is the favorite time for the Taylor family. Every Saturday, they make delicious pancakes together. Mr. Taylor mixes the flour, eggs, and milk in a large bowl. Lily and Sam are responsible for flipping the pancakes in the pan with a plastic tool. Finally, they put sweet honey and fresh strawberries on top. They sit around the dining table, share funny school stories, and enjoy their warm breakfast together.</div>
-            
-            <div class="question-block" id="d6q1">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 1: Which morning is the favorite time for the Taylor family?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd6q1')">A. Saturday morning.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd6q1')">B. Monday morning.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd6q1')">C. Friday evening.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>开头第一句就指出了“Saturday morning is the favorite time...”。</div>
-            </div>
-
-            <div class="question-block" id="d6q2">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 2: Who mixes the flour, eggs, and milk in the bowl?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd6q2')">A. Lily and Sam.</div>
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd6q2')">B. Mr. Taylor.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd6q2')">C. The grandmother.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>文中提到爸爸负责在碗里搅拌面粉、鸡蛋和牛奶。</div>
-            </div>
-
-            <div class="question-block" id="d6q3">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 3: What do Lily and Sam do during the cooking process?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd6q3')">A. They go out to buy fresh fruit.</div>
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd6q3')">B. They flip the pancakes in the pan.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd6q3')">C. They clean the dirty kitchen floor.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>两个孩子负责把锅里的煎饼翻面。</div>
-            </div>
-
-            <div class="question-block" id="d6q4">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 4: What toppings do they put on top of the pancakes?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd6q4')">A. Salty cheese and butter.</div>
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd6q4')">B. Sweet honey and fresh strawberries.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd6q4')">C. Green onions and meat.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>倒数第二句提到“they put sweet honey and fresh strawberries on top”。</div>
-            </div>
-        </div>
-
-        <div class="day-section day7-theme">
-            <div class="day-header"><div class="day-title">🌟 Day 7: A Trip to the Science Museum</div><div class="badge-animation">🏛️</div></div>
-            <div class="story-box" onclick="speakEN(this.innerText)">Today, Noah's class went on a field trip to the big Science Museum. There were many cool things to see, but Noah's favorite part was the Robot Zone. He saw a metal robot that could play chess with people and another robot that could draw beautiful pictures in two minutes. Noah even held hands with a small companion robot, and it said "Hello, welcome!" in a funny electronic voice. Noah decided that he wants to be a robot engineer when he grows up.</div>
-            
-            <div class="question-block" id="d7q1">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 1: Where did Noah's class go on a field trip today?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd7q1')">A. To a beautiful old forest.</div>
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd7q1')">B. To the big Science Museum.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd7q1')">C. To a pancake restaurant.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>第一句明确说班级去科学博物馆远足旅行。</div>
-            </div>
-
-            <div class="question-block" id="d7q2">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 2: What was Noah's absolute favorite part of the museum?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd7q2')">A. The Robot Zone.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd7q2')">B. The Spaceship Model.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd7q2')">C. The Lake with ducks.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>文中写道“Noah's favorite part was the Robot Zone”。</div>
-            </div>
-
-            <div class="question-block" id="d7q3">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 3: How long did it take the second robot to draw a picture?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd7q3')">A. One whole hour.</div>
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd7q3')">B. In two minutes.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd7q3')">C. In five seconds.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>另一个机器人可以在两分钟内画出漂亮的画。</div>
-            </div>
-
-            <div class="question-block" id="d7q4">
-                <div class="question-text" onclick="speakEN(this.innerText)">❓ Question 4: What does Noah want to be when he grows up?</div>
-                <div class="options-list">
-                    <div class="option-item" onclick="checkAnswer(this, true, 'd7q4')">A. A robot engineer.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd7q4')">B. A science teacher.</div>
-                    <div class="option-item" onclick="checkAnswer(this, false, 'd7q4')">C. A professional chess player.</div>
-                </div>
-                <div class="explanation"><strong>解析：</strong>最后一句提到“Noah decided that he wants to be a robot engineer when he grows up”。</div>
-            </div>
-        </div>
-    </div>
 
 </div>
 
@@ -842,7 +391,7 @@
         document.getElementById('section-en').classList.remove('active');
         document.querySelector('.btn-de').classList.remove('active-de');
         document.querySelector('.btn-en').classList.remove('active-en');
-        window.speechSynthesis.cancel(); // 切换语言时立刻切断声音
+        window.speechSynthesis.cancel(); // 切换时切断所有声音
 
         if (lang === 'de') {
             document.getElementById('section-de').classList.add('active');
@@ -853,23 +402,23 @@
         }
     }
 
-    // 🇩🇪 德语朗读专区
+    // 🇩🇪 德语智能朗读引擎
     function sayDE(text) {
         window.speechSynthesis.cancel();
-        // 自动剔除汉字注释，只朗读纯正德语
+        // 智能剔除中文注释和复述数字，只朗读核心德语
         let cleanText = text.replace(/[\u4e00-\u9fa5]/g, "").replace(/[()（）\-\d\.]/g, "").trim();
         const utterance = new SpeechSynthesisUtterance(cleanText);
-        utterance.lang = 'de-DE'; // 定向为纯正德语
+        utterance.lang = 'de-DE'; 
         utterance.rate = parseFloat(rateInput.value);
         window.speechSynthesis.speak(utterance);
     }
 
-    // 🇬🇧 英语朗读专区
+    // 🇬🇧 英语智能朗读引擎
     function speakEN(text) {
         window.speechSynthesis.cancel();
         let cleanText = text.replace("🔊 Click to Listen / 点击听朗读", "").replace("❓ ", "");
         const utterance = new SpeechSynthesisUtterance(cleanText);
-        utterance.lang = 'en-US'; // 定向为标准英语
+        utterance.lang = 'en-US'; 
         utterance.rate = parseFloat(rateInput.value);
         window.speechSynthesis.speak(utterance);
     }
@@ -879,7 +428,7 @@
         confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
     }
 
-    // 答题引擎
+    // 答题审判
     function checkAnswer(element, isCorrect, questionId) {
         const questionBlock = document.getElementById(questionId);
         const options = questionBlock.getElementsByClassName('option-item');
