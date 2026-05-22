@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Anan的英语有声互动阅读特训 (一周大满贯版)</title>
+    <title>Anan的英语有声互动阅读特训 (7天多题超级豪华版)</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         body {
@@ -58,7 +58,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
         
-        /* ===== 天数大关卡卡片渐变底色 ===== */
         .day-section {
             margin-top: 40px;
             padding: 30px;
@@ -134,152 +133,97 @@
 <body>
 
 <div class="container">
-    <h1>🇬🇧 英语互动阅读 7天特训大满贯</h1>
-    <div class="subtitle">有趣的故事 · 智能互动答题 · 答对触发缤纷彩带特效</div>
+    <h1>🇬🇧 英语互动阅读 7天多题超级强化版</h1>
+    <div class="subtitle">有趣的故事 · 3-4题深度强化 · 答对触发全屏彩带特效</div>
     
     <div class="notice">
-        <strong>💡 挑战指南：</strong>每天完成一个关卡，点击短文听标准发音，点击选项答题，答对有彩带雨哦！
+        <strong>💡 挑战指南：</strong>每天完成一个关卡，点击短文听标准发音。题目从3道扩充到了4道，能够帮孩子更牢固地记住单词并练习阅读理解逻辑！
     </div>
 
     <div class="control-panel">
         <label><strong>🔊 调整英语朗读速度:</strong></label>
         <input type="range" id="rate" min="0.5" max="1.5" value="0.8" step="0.1">
-        <span id="rate-value">0.8x (最适合五年级跟读听力语速)</span>
+        <span id="rate-value">0.8x (最适合跟读语速)</span>
     </div>
 
     <div class="day-section day1-theme">
         <div class="day-header"><div class="day-title">🌟 Day 1: Max and His Clever Dog</div><div class="badge-animation">🐶</div></div>
         <div class="story-box" onclick="speak(this.innerText)">Leo is a clever dog. He lives with a young boy named Max in a small town. Every morning, Leo waits by the front door. When Max puts on his shoes, Leo wags his tail happily because he knows it is time for a walk. Today, instead of going to the park, Max takes Leo to a new place. There are many trees, a beautiful lake, and three little ducks swimming quietly. Leo looks at the ducks curiously, but he does not bark. He just sits by the lake and enjoys the warm sunshine with Max.</div>
+        
         <div class="question-block" id="d1q1">
             <div class="question-text" onclick="speak(this.innerText)">❓ Question 1: Why does Leo wag his tail happily every morning?</div>
             <div class="options-list">
                 <div class="option-item" onclick="checkAnswer(this, false, 'd1q1')">A. Because he sees three little ducks.</div>
                 <div class="option-item" onclick="checkAnswer(this, true, 'd1q1')">B. Because he knows it is time for a walk.</div>
+                <div class="option-item" onclick="checkAnswer(this, false, 'd1q1')">C. Because Max gives him a nice shoe.</div>
             </div>
             <div class="explanation"><strong>解析：</strong>文中提到 Leo 看到 Max 穿鞋就知道要去散步了，所以高兴地摇尾巴。</div>
+        </div>
+
+        <div class="question-block" id="d1q2">
+            <div class="question-text" onclick="speak(this.innerText)">❓ Question 2: Where do Max and Leo usually go for a walk on other days?</div>
+            <div class="options-list">
+                <div class="option-item" onclick="checkAnswer(this, true, 'd1q2')">A. To the park.</div>
+                <div class="option-item" onclick="checkAnswer(this, false, 'd1q2')">B. To a school.</div>
+                <div class="option-item" onclick="checkAnswer(this, false, 'd1q2')">C. To a busy store.</div>
+            </div>
+            <div class="explanation"><strong>解析：</strong>文中提到“Today, instead of going to the park...”（今天，而不是去公园），说明平时习惯去公园。</div>
+        </div>
+
+        <div class="question-block" id="d1q3">
+            <div class="question-text" onclick="speak(this.innerText)">❓ Question 3: What does the word "curiously" mean in the story?</div>
+            <div class="options-list">
+                <div class="option-item" onclick="checkAnswer(this, false, 'd1q3')">A. In a very angry way.</div>
+                <div class="option-item" onclick="checkAnswer(this, true, 'd1q3')">B. Wanting to know or see something.</div>
+                <div class="option-item" onclick="checkAnswer(this, false, 'd1q3')">C. Feeling very tired.</div>
+            </div>
+            <div class="explanation"><strong>解析：</strong>“curiously” 意思是“好奇地”。看到新见到的鸭子，小狗感到很好奇。</div>
+        </div>
+
+        <div class="question-block" id="d1q4">
+            <div class="question-text" onclick="speak(this.innerText)">❓ Question 4: What is True about Leo when he sees the ducks?</div>
+            <div class="options-list">
+                <div class="option-item" onclick="checkAnswer(this, false, 'd1q4')">A. He jumps into the water to chase them.</div>
+                <div class="option-item" onclick="checkAnswer(this, false, 'd1q4')">B. He barks very loudly at them.</div>
+                <div class="option-item" onclick="checkAnswer(this, true, 'd1q4')">C. He stays quiet and sits down by Max.</div>
+            </div>
+            <div class="explanation"><strong>解析：</strong>最后提到“but he does not bark. He just sits by the lake”（但他没有叫，只是坐在湖边）。</div>
         </div>
     </div>
 
     <div class="day-section day2-theme">
         <div class="day-header"><div class="day-title">🌟 Day 2: The Secret of the Forest</div><div class="badge-animation">🌳</div></div>
-        <div class="story-box" onclick="speak(this.innerText)">Mia loves spending time outdoors. On a sunny afternoon, she walks into a deep forest behind her grandmother's house. The forest is quiet, and the air smells like fresh rain. Suddenly, Mia spots something shiny hidden under a large, old oak tree. She runs closer and discovers a small, wooden box wrapped in a green ribbon. With exciting hands, she opens it slowly. Inside the box, there is a beautiful stone that glows with a soft blue light and a short note that says: "To the person who loves nature."</div>
-        <div class="question-block" id="d2q1">
-            <div class="question-text" onclick="speak(this.innerText)">❓ Question 1: What does Mia discover under the large oak tree?</div>
-            <div class="options-list">
-                <div class="option-item" onclick="checkAnswer(this, true, 'd2q1')">A. A small wooden box with a ribbon.</div>
-                <div class="option-item" onclick="checkAnswer(this, false, 'd2q1')">B. A bag full of gold coins.</div>
-            </div>
-            <div class="explanation"><strong>解析：</strong>文中明确提到他在老橡树下发现了一个用绿丝带包裹的小木盒。</div>
-        </div>
-    </div>
-
-    <div class="day-section day3-theme">
-        <div class="day-header"><div class="day-title">🌟 Day 3: Ben's Special Star Project</div><div class="badge-animation">🚀</div></div>
-        <div class="story-box" onclick="speak(this.innerText)">Ben is eleven years old and loves science very much. This week, his school has a special project about space. Ben decides to make a model of the solar system. He uses colorful paper, small plastic balls, and a lot of silver glue to make the stars shine. His younger sister, Lily, wants to help him, so Ben asks her to paint the planet Mars bright red. They work together at the kitchen table for three evenings. On Friday morning, Ben carries his beautiful project safely to school.</div>
-        <div class="question-block" id="d3q1">
-            <div class="question-text" onclick="speak(this.innerText)">❓ Question 1: What subject does Ben love very much?</div>
-            <div class="options-list">
-                <div class="option-item" onclick="checkAnswer(this, false, 'd3q1')">A. History and Art</div>
-                <div class="option-item" onclick="checkAnswer(this, true, 'd3q1')">B. Science</div>
-            </div>
-            <div class="explanation"><strong>解析：</strong>开篇提到“loves science very much”，说明他最喜欢科学课。</div>
-        </div>
-    </div>
-
-    <div class="day-section day4-theme">
-        <div class="day-header"><div class="day-title">🌟 Day 4: The Lost Kitten in the Garden</div><div class="badge-animation">🐱</div></div>
-        <div class="story-box" onclick="speak(this.innerText)">Emma was reading a comic book in the garden when she heard a tiny sound. "Meow, meow." She looked behind the big rose bush and found a very small white kitten. It looked scared and its fur was dirty. Emma gently picked it up and brought it some warm milk from the kitchen. The kitten drank the milk fast and started to purr happily. Emma named the kitten "Snowy" because its fur was as white as snow, and her parents allowed her to keep it.</div>
-        <div class="question-block" id="d4q1">
-            <div class="question-text" onclick="speak(this.innerText)">❓ Question 1: Why did Emma name the kitten "Snowy"?</div>
-            <div class="options-list">
-                <div class="option-item" onclick="checkAnswer(this, true, 'd4q1')">A. Because its fur was as white as snow.</div>
-                <div class="option-item" onclick="checkAnswer(this, false, 'd4q1')">B. Because she found it on a snowy day.</div>
-            </div>
-            <div class="explanation"><strong>解析：</strong>最后一句提到，因为小猫的毛像雪一样白（as white as snow），所以起名叫 Snowy。</div>
-        </div>
-    </div>
-
-    <div class="day-section day5-theme">
-        <div class="day-header"><div class="day-title">🌟 Day 5: Grandfather's Magic Pocket Watch</div><div class="badge-animation">⌚</div></div>
-        <div class="story-box" onclick="speak(this.innerText)">Tom's grandfather has a beautiful golden pocket watch. It does not use batteries, but needs to be turned with a small key every night. Grandfather tells Tom that this watch is eighty years old and has traveled across many countries. When you put the watch close to your ear, it makes a steady "tick-tock" sound. To Tom, it sounds like a tiny heart beating. Grandfather promises to give this special watch to Tom on his twelfth birthday next year.</div>
-        <div class="question-block" id="d5q1">
-            <div class="question-text" onclick="speak(this.innerText)">❓ Question 1: How does the pocket watch get its power to run?</div>
-            <div class="options-list">
-                <div class="option-item" onclick="checkAnswer(this, false, 'd5q1')">A. It uses a small solar battery.</div>
-                <div class="option-item" onclick="checkAnswer(this, true, 'd5q1')">B. It needs to be turned with a small key every night.</div>
-            </div>
-            <div class="explanation"><strong>解析：</strong>文中提到“needs to be turned with a small key every night”，说明这块老怀表每晚需要用小钥匙上弦提供动力。</div>
-        </div>
-    </div>
-
-    <div class="day-section day6-theme">
-        <div class="day-header"><div class="day-title">🌟 Day 6: The Great Pancake Saturday</div><div class="badge-animation">🥞</div></div>
-        <div class="story-box" onclick="speak(this.innerText)">Saturday morning is the favorite time for the Taylor family. Every Saturday, they make delicious pancakes together. Mr. Taylor mixes the flour, eggs, and milk in a large bowl. Lily and Sam are responsible for flipping the pancakes in the pan with a plastic tool. Finally, they put sweet honey and fresh strawberries on top. They sit around the dining table, share funny school stories, and enjoy their warm breakfast together.</div>
-        <div class="question-block" id="d6q1">
-            <div class="question-text" onclick="speak(this.innerText)">❓ Question 1: What do Lily and Sam do during the cooking process?</div>
-            <div class="options-list">
-                <div class="option-item" onclick="checkAnswer(this, false, 'd6q1')">A. They mix the flour and eggs in the bowl.</div>
-                <div class="option-item" onclick="checkAnswer(this, true, 'd6q1')">B. They flip the pancakes in the pan.</div>
-            </div>
-            <div class="explanation"><strong>解析：</strong>文中提到“Lily and Sam are responsible for flipping the pancakes”，负责在平底锅里翻面。</div>
-        </div>
-    </div>
-
-    <div class="day-section day7-theme">
-        <div class="day-header"><div class="day-title">🌟 Day 7: A Trip to the Science Museum</div><div class="badge-animation">🏛️</div></div>
-        <div class="story-box" onclick="speak(this.innerText)">Today, Noah's class went on a field trip to the big Science Museum. There were many cool things to see, but Noah's favorite part was the Robot Zone. He saw a metal robot that could play chess with people and another robot that could draw beautiful pictures in two minutes. Noah even held hands with a small companion robot, and it said "Hello, welcome!" in a funny electronic voice. Noah decided that he wants to be a robot engineer when he grows up.</div>
-        <div class="question-block" id="d7q1">
-            <div class="question-text" onclick="speak(this.innerText)">❓ Question 1: What did the robot do when Noah held its hand?</div>
-            <div class="options-list">
-                <div class="option-item" onclick="checkAnswer(this, true, 'd7q1')">A. It said "Hello, welcome!" to him.</div>
-                <div class="option-item" onclick="checkAnswer(this, false, 'd7q1')">B. It played chess with him quickly.</div>
-            </div>
-            <div class="explanation"><strong>解析：</strong>文末提到当 Noah 握住机器人的手时，机器人用电子音对他说了“Hello, welcome!”。</div>
-        </div>
-    </div>
-
-</div>
-
-<script>
-    const rateInput = document.getElementById('rate');
-    const rateValue = document.getElementById('rate-value');
-    
-    rateInput.addEventListener('input', () => {
-        rateValue.textContent = rateInput.value + 'x' + (rateInput.value <= 0.8 ? ' (最适合跟读语速)' : '');
-    });
-
-    function speak(text) {
-        window.speechSynthesis.cancel(); 
-        let cleanText = text.replace("🔊 Click to Listen", ""); 
-        const utterance = new SpeechSynthesisUtterance(cleanText);
-        utterance.lang = 'en-US'; 
-        utterance.rate = parseFloat(rateInput.value); 
-        window.speechSynthesis.speak(utterance);
-    }
-
-    function celebrate() {
-        confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-    }
-
-    function checkAnswer(element, isCorrect, questionId) {
-        const questionBlock = document.getElementById(questionId);
-        const options = questionBlock.getElementsByClassName('option-item');
+        <div class="story-box" onclick="speak(this.innerText)">Mia loves spending time outdoors. On a sunny afternoon, she walks into a deep forest behind her grandmother's house. The forest is quiet, and the air smells like fresh rain. Suddenly, Mia spots something shiny hidden under a large, old oak tree. She runs closer and discovers a small, wooden box wrapped in a green ribbon. With exciting hands, she opens it slowly. Inside the box, there is a beautiful stone that glows with a soft blue light and a short note that says: "To the person who loves nature." Mia smiles warmly and decides to keep this wonderful secret in her heart.</div>
         
-        for (let option of options) { option.classList.remove('correct', 'wrong'); }
-        speak(element.innerText);
+        <div class="question-block" id="d2q1">
+            <div class="question-text" onclick="speak(this.innerText)">❓ Question 1: Where is the deep forest located?</div>
+            <div class="options-list">
+                <div class="option-item" onclick="checkAnswer(this, false, 'd2q1')">A. Next to Mia's school.</div>
+                <div class="option-item" onclick="checkAnswer(this, true, 'd2q1')">B. Behind her grandmother's house.</div>
+                <div class="option-item" onclick="checkAnswer(this, false, 'd2q1')">C. Inside a big city park.</div>
+            </div>
+            <div class="explanation"><strong>解析：</strong>开头明确写到“she walks into a deep forest behind her grandmother's house”。</div>
+        </div>
 
-        if (isCorrect) {
-            element.classList.add('correct');
-            celebrate();
-        } else {
-            element.classList.add('wrong');
-            for (let option of options) {
-                if (option.getAttribute('onclick').includes('true')) { option.classList.add('correct'); }
-            }
-        }
-        questionBlock.getElementsByClassName('explanation')[0].style.display = 'block';
-    }
-</script>
+        <div class="question-block" id="d2q2">
+            <div class="question-text" onclick="speak(this.innerText)">❓ Question 2: What does Mia discover under the large oak tree?</div>
+            <div class="options-list">
+                <div class="option-item" onclick="checkAnswer(this, true, 'd2q2')">A. A small wooden box with a ribbon.</div>
+                <div class="option-item" onclick="checkAnswer(this, false, 'd2q2')">B. A golden key to a house.</div>
+                <div class="option-item" onclick="checkAnswer(this, false, 'd2q2')">C. A little bird that cannot fly.</div>
+            </div>
+            <div class="explanation"><strong>解析：</strong>文中提到“discovers a small, wooden box wrapped in a green ribbon”。</div>
+        </div>
 
-</body>
-</html>
+        <div class="question-block" id="d2q3">
+            <div class="question-text" onclick="speak(this.innerText)">❓ Question 3: What is special about the stone inside the box?</div>
+            <div class="options-list">
+                <div class="option-item" onclick="checkAnswer(this, false, 'd2q3')">A. It is very heavy and dark.</div>
+                <div class="option-item" onclick="checkAnswer(this, true, 'd2q3')">B. It glows with a soft blue light.</div>
+                <div class="option-item" onclick="checkAnswer(this, false, 'd2q3')">C. It is made of sweet chocolate.</div>
+            </div>
+            <div class="explanation"><strong>解析：</strong>文中描述石头是“a beautiful stone that glows with a soft blue light”（发着柔和蓝光的漂亮石头）。</div>
+        </div>
+
+        <div class="question-block" id="d2q4">
+            <div class="question-text" onclick="speak(this.innerText)">❓ Question 4: What does the note in
