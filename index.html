@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>全家多语言互动学习中心 (智能纯净版)</title>
+    <title>全家多语言互动学习中心 (德语全功能发音宝典 + 英语纯净版)</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         body {
@@ -85,21 +85,9 @@
         /* 英语卡片样式 */
         .day-section { margin-top: 35px; padding: 30px; border-radius: 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
         .day1-theme { background: linear-gradient(180deg, #fffdf0 0%, #ffffff 100%); border: 2px solid #fef3c7; }
-        .day2-theme { background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%); border: 2px solid #bbf7d0; }
-        .day3-theme { background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%); border: 2px solid #bae6fd; }
-        .day4-theme { background: linear-gradient(180deg, #faf5ff 0%, #ffffff 100%); border: 2px solid #e9d5ff; }
-        .day5-theme { background: linear-gradient(180deg, #fff7ed 0%, #ffffff 100%); border: 2px solid #ffedd5; }
-        .day6-theme { background: linear-gradient(180deg, #f5f3ff 0%, #ffffff 100%); border: 2px solid #ddd6fe; }
-        .day7-theme { background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%); border: 2px solid #fecdd3; }
         .day-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
         .day-title { color: white; display: inline-block; padding: 6px 20px; border-radius: 20px; font-size: 16px; font-weight: bold; }
         .day1-theme .day-title { background-color: #d97706; }
-        .day2-theme .day-title { background-color: #16a34a; }
-        .day3-theme .day-title { background-color: #2563eb; }
-        .day4-theme .day-title { background-color: #7c3aed; }
-        .day5-theme .day-title { background-color: #ea580c; }
-        .day6-theme .day-title { background-color: #6d28d9; }
-        .day7-theme .day-title { background-color: #be123c; }
         .badge-animation { font-size: 28px; animation: float 2.5s ease-in-out infinite; }
         @keyframes float { 0% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-6px) rotate(5deg); } 100% { transform: translateY(0px) rotate(0deg); } }
         
@@ -129,35 +117,159 @@
 
     <div class="control-panel">
         <label><strong>🔊 智能语速调节器:</strong></label>
-        <input type="range" id="rate" min="0.4" max="1.5" value="0.8" step="0.1">
-        <span id="rate-value">0.8x (最适合模仿跟读语速)</span>
+        <input type="range" id="rate" min="0.4" max="1.5" value="0.7" step="0.1">
+        <span id="rate-value">0.7x (当前推荐模仿语速)</span>
     </div>
 
     <div id="section-de" class="lang-section active">
         <h1>🇩🇪 德语发音与A1词汇核心通关宝典</h1>
-        <div class="subtitle">发音基础 + 星期月份 + 阳性名词 + 序数词高强度有声强化</div>
+        <div class="subtitle">发音基础全集 + 星期月份 + 阳性名词 + 序数词高强度有声强化</div>
         
         <div class="notice notice-de">
-            <strong>💡 A1强化特训法：</strong> 点击蓝色德语词汇或长句即可聆听纯正德音。阳性名词自带定冠词 `der` 连读。
+            <strong>💡 A1强化特训法：</strong> 鼠标直接点击下方的<strong>蓝色德语词汇或长句</strong>，即可聆听纯正的德国发音。反复模仿口型，建立下意识的德语听力直觉！
         </div>
 
-        <h2>一、德语核心发音回顾</h2>
+        <h2>一、德语核心发音通关宝典（完整全集）</h2>
         <table>
             <thead>
-                <tr><th width="12%">组合</th><th width="22%">规律</th><th width="30%">单词</th><th width="36%">句子</th></tr>
+                <tr>
+                    <th width="12%">分类/组合</th>
+                    <th width="25%">发音口型核心规律</th>
+                    <th width="28%">高频强化单词 (点击发音)</th>
+                    <th width="35%">经典实用句子 (点击发音)</th>
+                </tr>
             </thead>
             <tbody>
                 <tr>
+                    <td class="letter-cell">ä</td>
+                    <td>发音与德语短元音 e 类似，嘴角向两边拉开，张开度比 e 略大。</td>
+                    <td>
+                        <div class="word-grid">
+                            <div class="speakable" onclick="sayDE('Käse')">1. der Käse (奶酪)</div>
+                            <div class="speakable" onclick="sayDE('Mädchen')">2. das Mädchen (女孩)</div>
+                            <div class="speakable" onclick="sayDE('März')">3. der März (三月)</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das Mädchen ist klug.')">Das Mädchen ist klug.</span><span class="translation">这个女孩很聪明。</span></div>
+                    </td>
+                </tr>
+                <tr>
                     <td class="letter-cell">ö</td>
-                    <td>圆唇发 e。拼音 "o" 嘴型，发 “哎(e)” 音。</td>
-                    <td><div class="word-grid"><div class="speakable" onclick="sayDE('schön')">1. schön (美丽的)</div><div class="speakable" onclick="sayDE('öffnen')">2. öffnen (打开)</div></div></td>
-                    <td><div class="sentence-box"><span class="speakable" onclick="sayDE('Das ist sehr schön.')">Das ist sehr schön.</span></div></td>
+                    <td>圆唇发 e。双唇摆出拼音 "o" 嘴型，固定不动，口腔内发 “哎(e)” 的音。</td>
+                    <td>
+                        <div class="word-grid">
+                            <div class="speakable" onclick="sayDE('schön')">1. schön (美丽的)</div>
+                            <div class="speakable" onclick="sayDE('öffnen')">2. öffnen (打开)</div>
+                            <div class="speakable" onclick="sayDE('möchte')">3. möchte (想要)</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das ist sehr schön.')">Das ist sehr schön.</span><span class="translation">这太漂亮了。</span></div>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich möchte einen Tee.')">Ich möchte einen Tee.</span><span class="translation">我想来杯茶。</span></div>
+                    </td>
                 </tr>
                 <tr>
                     <td class="letter-cell">ü</td>
-                    <td>憋嘴发 i。拼音 u 口型，发“衣(i)”音。</td>
-                    <td><div class="word-grid"><div class="speakable" onclick="sayDE('Tür')">1. Tür (门)</div><div class="speakable" onclick="sayDE('müde')">2. müde (疲劳的)</div></div></td>
-                    <td><div class="sentence-box"><span class="speakable" onclick="sayDE('Die Tür ist zu.')">Die Tür ist zu.</span></div></td>
+                    <td>憋嘴发 i。双唇噘起成拼音 u 的口型，固定住，舌尖顶住下齿发“衣(i)”。</td>
+                    <td>
+                        <div class="word-grid">
+                            <div class="speakable" onclick="sayDE('Tür')">1. Tür (门)</div>
+                            <div class="speakable" onclick="sayDE('Küche')">2. Küche (厨房)</div>
+                            <div class="speakable" onclick="sayDE('müde')">3. müde (疲劳的)</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Die Tür ist zu.')">Die Tür ist zu.</span><span class="translation">门关着。</span></div>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich bin heute so müde.')">Ich bin heute so müde.</span><span class="translation">我今天太累了。</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="letter-cell">ei / ai</td>
+                    <td>双元音。发音与汉语拼音的 "ai" 极其相似，由 a 向 i 滑动。</td>
+                    <td>
+                        <div class="word-grid">
+                            <div class="speakable" onclick="sayDE('nein')">1. nein (不)</div>
+                            <div class="speakable" onclick="sayDE('mein')">2. mein (我的)</div>
+                            <div class="speakable" onclick="sayDE('Arbeit')">3. die Arbeit (工作)</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Das ist mein Tisch.')">Das ist mein Tisch.</span><span class="translation">这是我的桌子。</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="letter-cell">ie</td>
+                    <td>长元音。字母 e 不发音，只把 i 的音拉长，发“衣——”。</td>
+                    <td>
+                        <div class="word-grid">
+                            <div class="speakable" onclick="sayDE('sie')">1. sie (她/他们/您)</div>
+                            <div class="speakable" onclick="sayDE('hier')">2. hier (这里)</div>
+                            <div class="speakable" onclick="sayDE('lieben')">3. lieben (喜欢/爱)</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Wir lernen hier Deutsch.')">Wir lernen hier Deutsch.</span><span class="translation">我们在学德语。</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="letter-cell">eu / äu</td>
+                    <td>双元音。发音接近拼音的 "oy" 或 英文的 "oy"，由开唇的 o 向 ü 滑动。</td>
+                    <td>
+                        <div class="word-grid">
+                            <div class="speakable" onclick="sayDE('neu')">1. neu (新的)</div>
+                            <div class="speakable" onclick="sayDE('Deutsch')">2. Deutsch (德语)</div>
+                            <div class="speakable" onclick="sayDE('Häuser')">3. die Häuser (房子-复数)</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Deutsch macht Spaß.')">Deutsch macht Spaß.</span><span class="translation">德语很有趣。</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="letter-cell">st / sp</td>
+                    <td>当位于**词首**或前缀后时，其中的 s 发成 sch（“施”），组合发“施特”和“施普”。</td>
+                    <td>
+                        <div class="word-grid">
+                            <div class="speakable" onclick="sayDE('Straße')">1. die Straße (街道)</div>
+                            <div class="speakable" onclick="sayDE('Sport')">2. der Sport (运动)</div>
+                            <div class="speakable" onclick="sayDE('sprechen')">3. sprechen (说话)</div>
+                            <div class="speakable" onclick="sayDE('Stadt')">4. die Stadt (城市)</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Hannover ist eine grüne Stadt.')">Hannover ist eine grüne Stadt.</span><span class="translation">汉诺威是一座绿化很好的城市。</span></div>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Sprechen Sie Englisch?')">Sprechen Sie Englisch?</span><span class="translation">您说英语吗？</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="letter-cell">sch</td>
+                    <td>三个字母发一个音，相当于英语的 "sh" 或汉语拼音的 "sh"（“施”），双唇前噘。</td>
+                    <td>
+                        <div class="word-grid">
+                            <div class="speakable" onclick="sayDE('schön')">1. schön (美丽的)</div>
+                            <div class="speakable" onclick="sayDE('Schnitzel')">2. das Schnitzel (炸肉排)</div>
+                            <div class="speakable" onclick="sayDE('Fleisch')">3. das Fleisch (肉)</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich esse Fleisch.')">Ich esse Fleisch.</span><span class="translation">我吃肉。</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="letter-cell">ch</td>
+                    <td>在 e, i, ä, ö, ü 后发舌面清擦音（像气流从牙缝挤出来的“西”）；在 a, o, u 后发喉部擦音（“喝”）。</td>
+                    <td>
+                        <div class="word-grid">
+                            <div class="speakable" onclick="sayDE('ich')">1. ich (我 - 发"西")</div>
+                            <div class="speakable" onclick="sayDE('nicht')">2. nicht (不 - 发"西")</div>
+                            <div class="speakable" onclick="sayDE('auch')">3. auch (也 - 发"喝")</div>
+                            <div class="speakable" onclick="sayDE('Küche')">4. die Küche (厨房)</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Ich bin nicht müde.')">Ich bin nicht müde.</span><span class="translation">我不累。</span></div>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -165,32 +277,107 @@
         <h2>二、时间维度：星期与月份 (Wochentage & Monate)</h2>
         <table>
             <thead>
-                <tr><th width="12%">分类</th><th width="22%">语法</th><th width="30%">高频词</th><th width="36%">常用句</th></tr>
+                <tr>
+                    <th width="12%">分类标签</th>
+                    <th width="25%">A1核心语法贴士</th>
+                    <th width="28%">高频词汇专项 (点击发音)</th>
+                    <th width="35%">场景实用日常句 (点击发音)</th>
+                </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="letter-cell">星期</td>
-                    <td>全部是阳性，介词用 **am**。</td>
-                    <td><div class="word-grid"><div class="speakable" onclick="sayDE('der Montag')">1. der Montag (周一)</div><div class="speakable" onclick="sayDE('der Freitag')">2. der Freitag (周五)</div><div class="speakable" onclick="sayDE('der Sonntag')">3. der Sonntag (周日)</div></div></td>
-                    <td><div class="sentence-box"><span class="speakable" onclick="sayDE('Heute ist Montag.')">Heute ist Montag.</span></div><div class="sentence-box"><span class="speakable" onclick="sayDE('Am Freitag habe ich frei.')">Am Freitag habe ich frei.</span></div></td>
+                    <td class="letter-cell">星期<br>Woche</td>
+                    <td>德语中所有的星期日子全部都是**阳性名词**，时间介词用 **am**。</td>
+                    <td>
+                        <div class="word-grid">
+                            <div class="speakable" onclick="sayDE('der Montag')">1. der Montag (周一)</div>
+                            <div class="speakable" onclick="sayDE('der Mittwoch')">2. der Mittwoch (周三)</div>
+                            <div class="speakable" onclick="sayDE('der Freitag')">3. der Freitag (周五)</div>
+                            <div class="speakable" onclick="sayDE('der Samstag')">4. der Samstag (周六)</div>
+                            <div class="speakable" onclick="sayDE('der Sonntag')">5. der Sonntag (周日)</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Heute ist Montag.')">Heute ist Montag.</span><span class="translation">今天是星期一。</span></div>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Am Freitag habe ich frei.')">Am Freitag habe ich frei.</span><span class="translation">我星期五休息。</span></div>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="letter-cell">月份</td>
-                    <td>全部是阳性，介词用 **im**。</td>
-                    <td><div class="word-grid"><div class="speakable" onclick="sayDE('der Januar')">1. der Januar (一月)</div><div class="speakable" onclick="sayDE('der Mai')">2. der Mai (五月)</div><div class="speakable" onclick="sayDE('der Dezember')">3. der Dezember (十二月)</div></div></td>
-                    <td><div class="sentence-box"><span class="speakable" onclick="sayDE('Im Mai ist das Wetter schön.')">Im Mai ist das Wetter schön.</span></div></td>
+                    <td class="letter-cell">月份<br>Monate</td>
+                    <td>德语中12个月份的名字也全部是重读的**阳性名词**，时间介词用 **im**。</td>
+                    <td>
+                        <div class="word-grid">
+                            <div class="speakable" onclick="sayDE('der Januar')">1. der Januar (一月)</div>
+                            <div class="speakable" onclick="sayDE('der Mai')">2. der Mai (五月)</div>
+                            <div class="speakable" onclick="sayDE('der Juli')">3. der Juli (七月)</div>
+                            <div class="speakable" onclick="sayDE('der Oktober')">4. der Oktober (十月)</div>
+                            <div class="speakable" onclick="sayDE('der Dezember')">5. der Dezember (十二月)</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Im Mai ist das Wetter schön.')">Im Mai ist das Wetter schön.</span><span class="translation">五月份天气很漂亮。</span></div>
+                    </td>
                 </tr>
             </tbody>
         </table>
 
-        <h2>三、德语核心：阳性名词特训 (der)</h2>
+        <h2>三、德语核心：阳性名词特训 (Maskuline Nomen - der)</h2>
         <table>
+            <thead>
+                <tr>
+                    <th width="12%">专项主题</th>
+                    <th width="25%">核心语言逻辑</th>
+                    <th width="28%">带定冠词 der 高频词 (点击发音)</th>
+                    <th width="35%">带冠词的名词长句 (点击发音)</th>
+                </tr>
+            </thead>
             <tbody>
                 <tr>
                     <td class="letter-cell">阳性名词<br>der</td>
-                    <td>点击连带 `der` 一起背，形成下意识语感。</td>
-                    <td><div class="word-grid"><div class="speakable" onclick="sayDE('der Mann')">1. der Mann (男人)</div><div class="speakable" onclick="sayDE('der Bahnhof')">2. der Bahnhof (火车站)</div><div class="speakable" onclick="sayDE('der Tisch')">3. der Tisch (桌子)</div><div class="speakable" onclick="sayDE('der Kaffee')">4. der Kaffee (咖啡)</div></div></td>
-                    <td><div class="sentence-box"><span class="speakable" onclick="sayDE('Wo ist der Bahnhof?')">Wo ist der Bahnhof?</span></div><div class="sentence-box"><span class="speakable" onclick="sayDE('Der Kaffee schmeckt gut.')">Der Kaffee schmeckt gut.</span></div></td>
+                    <td>点击时连带定冠词 `der` 一起背，形成下意识的固定搭配和听力直觉。</td>
+                    <td>
+                        <div class="word-grid">
+                            <div class="speakable" onclick="sayDE('der Mann')">1. der Mann (男人 / 丈夫)</div>
+                            <div class="speakable" onclick="sayDE('der Vater')">2. der Vater (父亲)</div>
+                            <div class="speakable" onclick="sayDE('der Bahnhof')">3. der Bahnhof (火车站)</div>
+                            <div class="speakable" onclick="sayDE('der Tisch')">4. der Tisch (桌子)</div>
+                            <div class="speakable" onclick="sayDE('der Kaufvertrag')">5. der Kaufvertrag (购买合同)</div>
+                            <div class="speakable" onclick="sayDE('der Kaffee')">6. der Kaffee (咖啡)</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Wo ist der Bahnhof?')">Wo ist der Bahnhof?</span><span class="translation">火车站站在哪里？</span></div>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Der Kaufvertrag ist fertig.')">Der Kaufvertrag is fertig.</span><span class="translation">购买合同已经准备好了。</span></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>四、基础数学与序数词 (Zahlen & Ordnungszahlen)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th width="12%">分类</th>
+                    <th width="25%">数词变化核心规律</th>
+                    <th width="28%">高频数词强化 (点击发音)</th>
+                    <th width="35%">涉及序数词的常用句 (点击发音)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="letter-cell">序数词<br>序列</td>
+                    <td>1-19的序数词在基数词后加 **-te**（有例外如 erst, dritt）。前面有定冠词配合。</td>
+                    <td>
+                        <div class="word-grid">
+                            <div class="speakable" onclick="sayDE('erste')">1. erste (第一)</div>
+                            <div class="speakable" onclick="sayDE('zweite')">2. zweite (第二)</div>
+                            <div class="speakable" onclick="sayDE('dritte')">3. dritter (第三)</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Heute ist der erste Mai.')">Heute ist der erste Mai.</span><span class="translation">今天是五月一日。</span></div>
+                        <div class="sentence-box"><span class="speakable" onclick="sayDE('Er wohnt im dritten Stock.')">Er wohnt im dritten Stock.</span><span class="translation">他住在三楼。</span></div>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -243,9 +430,7 @@
                 </div>
             </div>
         </div>
-
     </div>
-
 </div>
 
 <script>
@@ -272,6 +457,7 @@
         }
     }
 
+    // 德语智能过滤朗读
     function sayDE(text) {
         window.speechSynthesis.cancel();
         let cleanText = text.replace(/[\u4e00-\u9fa5]/g, "").replace(/[()（）\-\d\.]/g, "").trim();
@@ -281,16 +467,11 @@
         window.speechSynthesis.speak(utterance);
     }
 
-    // ===== 重点修改：英语朗读引擎（跳过 A.B.C.D.） =====
+    // 英语智能过滤朗读（完美切除开头的 A. B. C. D.）
     function speakEN(text) {
         window.speechSynthesis.cancel();
-        
-        // 1. 去掉基础提示词
         let cleanText = text.replace("🔊 Click to Listen / 点击听朗读", "").replace("❓ ", "");
-        
-        // 2. 智能去掉开头的 A. B. C. D. （核心正则逻辑）
-        // 逻辑：匹配开头是一个字母（A-D）后面跟着一个点和空格，并将其替换为空
-        cleanText = cleanText.replace(/^[A-D][\.\s]+/i, "");
+        cleanText = cleanText.replace(/^[A-D][\.\s]+/i, ""); // 正则无情切除选项前缀
 
         const utterance = new SpeechSynthesisUtterance(cleanText);
         utterance.lang = 'en-US'; 
@@ -307,8 +488,6 @@
         const options = questionBlock.getElementsByClassName('option-item');
         
         for (let option of options) { option.classList.remove('correct', 'wrong'); }
-        
-        // 这里会自动调用修改后的 speakEN，跳过前面的字母
         speakEN(element.innerText);
 
         if (isCorrect) {
